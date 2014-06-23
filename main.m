@@ -1,5 +1,7 @@
 clear all;
+
 result = zeros(10,1);
+%识别0-9
 for i = 0:9
     fprintf('正在识别数字%d...',i);
     result(i+1) = speechrecognition(i);
