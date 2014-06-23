@@ -1,5 +1,6 @@
-%enframe.m
 function f=enframe(x,win,inc)
+%enframe.m ”Ô“Ù–≈∫≈∑÷÷°
+
 nx=length(x(:));
 nwin=length(win);
 if (nwin == 1)
