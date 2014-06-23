@@ -1,5 +1,6 @@
-%melbankm.m
 function [x,mn,mx]=melbankm(p,n,fs,fl,fh,w)
+%melbankm.m
+
 if nargin < 6
    w='tz';
    if nargin < 5
