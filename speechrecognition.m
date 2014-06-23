@@ -11,7 +11,6 @@ for i=0:9
     ref(i+1).mfcc=m;
 end
 
-%disp('正在计算测试模板的参数...');
 %计算测试模板的参数
 fname=sprintf('./data/test/%d.wav',testnum);
 x=wavread(fname);
@@ -20,7 +19,6 @@ m=mfcc(x);
 m=m(x1-2:x2-4,:);
 test_mfcc=m;
 
-%disp('正在进行模板匹配...')
 %进行模板匹配
 dist=zeros(10,1);
 for j=0:9
