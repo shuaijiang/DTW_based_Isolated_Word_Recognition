@@ -1,11 +1,11 @@
 function [x1,x2]=vad(x)
-%%双门限端点检测算法
+%%Double threshold endpoint detection algorithm
 
-%幅度归一化到[-1,1]
+%normalized amplitude  to[-1,1]
 x=double(x);
 x=x/max(abs(x));
 
-%常数设置
+%constant setting
 FrameLen=240;
 FrameInc=80;
 
