@@ -32,7 +32,7 @@ amp=sum(abs(enframe(filter([1 -0.9375],1,x),FrameLen,FrameInc)),2);
 amp1=min(amp1,max(amp)/4);
 amp2=min(amp2,max(amp)/8);
 
-%开始端点检测
+%begin endpoint detection
 x1 = 0;
 x2 = 0;
 for n=1:length(zcr)
@@ -46,14 +46,14 @@ for n=1:length(zcr)
     elseif (amp(n)>amp2 || zcr(n)>zcr(2)) %可能处于语音段
       status=1;
       count=count+1;
-    else %静音状态
+    else            %静音状态
       status=0;
       count=0;
     end
-  case 2, %2=语音段
+  case 2,           %2=语音段
     if (amp(n)>amp(2) || zcr(n)>zcr(2)) %保持在语音段
       count=count+1;
-    else %语音将结束
+    else            %语音将结束
       silence=silence+1;
       if silence<maxsilence     %静音还不够长，尚未结束
         count=count+1;
